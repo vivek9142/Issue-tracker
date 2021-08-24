@@ -1,13 +1,25 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import ListItem from './ListItem';
 
-import { useSelector } from 'react-redux';
+import { getIssues,deleteIssue } from '../Redux/Reducer/issueReducer';
+import { useDispatch,useSelector } from 'react-redux';
 
-const List = () => {        
-        const realIssues = useSelector(state => state.issue.issues);
+const List = () => {  
+    const dispatch = useDispatch();
+    
+        useEffect(() => {
+            dispatch(getIssues()); 
+        },[dispatch]);
         
-        const ListContents = realIssues.map(issue => (
-            <ListItem key={issue.id} {...issue}/>
+        const delHandler = (id) => {
+            dispatch(deleteIssue(id));
+        }
+
+        
+        const realIssues = useSelector(state => state.issue);
+        console.log(realIssues);
+        const ListContents = realIssues.issues.map(issue => (
+            <ListItem key={issue.id} {...issue} onDelete={delHandler}/>
         ));
         
     return(

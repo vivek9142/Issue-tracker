@@ -25,11 +25,12 @@ function App() {
         
             <Route path='/' exact component={Issues}/>
 
-            { isAuth && [
-                <Route path='/AddIssue' key='/AddIssue' exact component={AddIssue}/>,
+            {/* { isAuth && [ */}
+                <Route path='/AddIssue' key='/AddIssue' exact component={AddIssue}/>
+                {/* , */}
                 <Route path='/update/:id' key='/updateIssue' exact component={UpdateIssue}/>
-            ]
-            }
+            {/* ]
+            } */}
             
             <Route path='/About' component={About}/>
             <Route path='/Login' exact component={Login}/>

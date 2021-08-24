@@ -5,7 +5,7 @@ import IssueField from '../Components/IssueField';
 import * as Yup from 'yup';
 
 import { useDispatch,useSelector } from 'react-redux';
-import { issueActions } from '../Redux/Reducer/issueReducer';
+import { updateIssue } from '../Redux/Reducer/issueReducer';
 
 const UpdateIssue = (props) => {
     const submitHandler = (event) => {
@@ -14,7 +14,8 @@ const UpdateIssue = (props) => {
         updatedIssue.description = event.description;
         updatedIssue.severity = event.severity;
         updatedIssue.status = event.status;
-        dispatch(issueActions.updateIssue(updatedIssue));
+        console.log(updatedIssue);
+        dispatch(updateIssue({issue:updatedIssue}));
         props.history.push('/');
     }
 

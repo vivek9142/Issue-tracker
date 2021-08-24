@@ -3,7 +3,7 @@ import {Formik,Form} from 'formik';
 import IssueField from '../Components/IssueField';
 
 import {useDispatch} from 'react-redux';
-import { issueActions } from '../Redux/Reducer/issueReducer';
+import { addIssue } from '../Redux/Reducer/issueReducer';
 
 import * as Yup from 'yup';
 
@@ -17,7 +17,7 @@ const AddIssue = (props) =>{
         newIssue.severity = event.severity;
         newIssue.status = event.status;
         console.log(newIssue);
-        dispatch(issueActions.addIssue(newIssue));
+        dispatch(addIssue(newIssue));
         props.history.push('/');
     }
 
