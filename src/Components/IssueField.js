@@ -44,6 +44,16 @@ const TextField = ({label,type,...props}) => {
         )
     }
 
+    else if(type==='date'){
+        return (
+            <label htmlFor={label}>{label}
+            <Field  type='date' {...field} {...props} />
+            {/* // <input type="date" name='createdDate' /> */}
+            <ErrorMessage className='error' component='span' name={field.name}/>
+            </label>
+        )
+    }
+
 
 };
 

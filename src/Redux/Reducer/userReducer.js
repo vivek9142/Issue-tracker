@@ -1,40 +1,51 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { registerUser,loginUser } from "../Actions/UserActions";
 
 const initialState = {
-    users:[{
-        "firstName": "cc",
-        "lastName": "ccc",
-        "location": "blr",
-        "email": "blr@w.com",
-        "mobNo": 3393933939,
-        "password": "password",
-        "id": 1
-      }],
     isAuthenticated:false,
-    authenticatedUser:{}
+    authenticatedUser:{},
+    error:'',
+    status:''
 }
 
 const userReducer = createSlice({
     name:'user',
     initialState,
     reducers:{
-        registerUser(state,action){
-            action.payload.id = state.users.length + 1;
-            state.users.push(action.payload);
-            state.isAuthenticated=true;
-            state.authenticatedUser = action.payload;
-        },
-        loginUser(state,action){
-            const foundUser = state.users.find(user => user.email === action.payload.email && user.password === action.payload.password);
-            if(foundUser){
-                state.isAuthenticated=true;
-                state.authenticatedUser = {...foundUser,password:undefined };
-            }
-        },
         logoutUser(state){
             state.isAuthenticated=false;
             state.authenticatedUser={};
+        },
+        resetErrorStatus(state){
+            state.error='';
+            state.status='success'
         }
+    },
+    extraReducers:(builder) =>{
+        builder.addCase(registerUser.pending,(state) => {
+           state.status='loading';
+       }).addCase(registerUser.fulfilled,(state,action)=>{
+            state.isAuthenticated=true;
+            state.authenticatedUser = action.payload;
+            state.status = 'success';
+            state.error='';
+       }).addCase(registerUser.rejected,(state,action)=>{
+        state.status='failed';
+        state.error = action.payload || action.error.message;
+       })
+       builder.addCase(loginUser.pending,(state)=>{
+           state.status='loading'
+       }).addCase(loginUser.fulfilled,(state,action)=>{
+           if(action.payload){
+            state.isAuthenticated=true;
+            state.authenticatedUser = {...action.payload,password:undefined };
+            state.error='';
+            state.status='success';
+            }
+       }).addCase(loginUser.rejected,(state,action)=>{
+           state.status='failed';
+           state.error = action.payload || action.error.message;
+       })
     }
 });
 

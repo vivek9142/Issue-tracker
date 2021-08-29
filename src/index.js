@@ -2,8 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+// import App from './React-Redux-Async-testing/App';
 
 import store from './Redux/Store';
+// import {store} from './React-Redux-Async-testing/reducer/store';
 import { Provider } from 'react-redux';
 
 ReactDOM.render(

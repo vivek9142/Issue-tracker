@@ -1,52 +1,222 @@
 {
   "issues": [
     {
-      "description": "a@aaa",
-      "severity": "Major",
-      "status": "In Progress",
+      "views": 8,
+      "description": "ckzz11111",
+      "severity": "Minor",
+      "status": "Closed",
+      "createdDate": "2021-07-26",
+      "resolvedDate": "2021-08-10",
       "id": 1
     },
     {
-      "description": "1211",
-      "severity": "Major",
+      "views": 0,
+      "description": "On clicking Delete, the application crashes.",
+      "severity": "Critical",
       "status": "Open",
+      "createdDate": "2021-08-04",
+      "resolvedDate": "2021-08-04",
       "id": 2
     },
     {
-      "description": "222222",
-      "severity": "Critical",
-      "status": "In Progress",
+      "views": 1,
+      "description": "The heading Add is wrongly displayed as Edit.",
+      "severity": "Minor",
+      "status": "Closed",
+      "createdDate": "2021-08-04",
+      "resolvedDate": "2021-08-04",
       "id": 3
     },
     {
-      "description": "11111111111",
+      "views": 0,
+      "description": "The payment functionality is missing.",
       "severity": "Major",
       "status": "In Progress",
+      "createdDate": "2021-08-04",
+      "resolvedDate": "2021-08-04",
       "id": 4
     },
     {
-      "description": " ",
-      "severity": "Critical",
-      "status": "In Progress",
+      "views": 0,
+      "description": "On adding to cart,the item does not get added.",
+      "severity": "Major",
+      "status": "Open",
+      "createdDate": "2021-08-04",
+      "resolvedDate": "2021-08-04",
       "id": 5
     },
     {
-      "description": "qqq",
-      "severity": "Critical",
-      "status": "In Progress",
+      "views": 0,
+      "description": "zzzz",
+      "severity": "Major",
+      "status": "Closed",
+      "createdDate": "2021-08-06",
+      "resolvedDate": "2021-08-09",
       "id": 6
     },
     {
-      "description": "vv",
+      "views": 0,
+      "description": "aaaaaaaaaa",
       "severity": "Critical",
-      "status": "Open",
+      "status": "Closed",
+      "createdDate": "2021-08-19",
+      "resolvedDate": "2021-08-23",
       "id": 7
     },
     {
-      "description": "k",
-      "severity": "Major",
-      "status": "In Progress",
+      "views": 0,
+      "description": "aaaaaaaaaa",
+      "severity": "Critical",
+      "status": "Open",
+      "createdDate": "2021-08-19",
+      "resolvedDate": "2021-08-23",
       "id": 8
+    },
+    {
+      "views": 0,
+      "description": "aaaaaaaaaa",
+      "severity": "Critical",
+      "status": "Open",
+      "createdDate": "2021-08-19",
+      "resolvedDate": "2021-08-23",
+      "id": 9
+    },
+    {
+      "views": 0,
+      "description": "blr@w.com",
+      "severity": "Critical",
+      "status": "In Progress",
+      "createdDate": "2021-07-29",
+      "resolvedDate": "2021-08-02",
+      "id": 10
+    },
+    {
+      "views": 0,
+      "description": "vv",
+      "severity": "Minor",
+      "status": "In Progress",
+      "createdDate": "2021-07-29",
+      "resolvedDate": "2021-08-02",
+      "id": 11
+    },
+    {
+      "views": 0,
+      "description": "zzz",
+      "severity": "Critical",
+      "status": "In Progress",
+      "createdDate": "2021-08-06",
+      "resolvedDate": "2021-07-26",
+      "id": 12
+    },
+    {
+      "views": 0,
+      "description": "z",
+      "severity": "Critical",
+      "status": "In Progress",
+      "createdDate": "2021-08-05",
+      "resolvedDate": "2021-08-23",
+      "id": 13
+    }
+  ],
+  "users": [
+    {
+      "firstName": "cc",
+      "lastName": "ccc",
+      "location": "blr",
+      "email": "blr@w.com",
+      "mobNo": 3393933939,
+      "password": "password",
+      "id": 1
+    },
+    {
+      "firstName": "ddddddddd`",
+      "lastName": "sssssss",
+      "location": "aaaa",
+      "email": "aaa@a.com",
+      "mobNo": 1111111111,
+      "password": "password",
+      "id": 2
+    },
+    {
+      "firstName": "ddddddddd`",
+      "lastName": "sssssss",
+      "location": "aaaa",
+      "email": "aaa@a.com",
+      "mobNo": 1111111111,
+      "password": "password",
+      "id": 3
+    },
+    {
+      "firstName": "ddddddddd`",
+      "lastName": "sssssss",
+      "location": "aaaa",
+      "email": "aaa@a.com",
+      "mobNo": 1111111111,
+      "password": "password",
+      "id": 4
+    },
+    {
+      "firstName": "q",
+      "lastName": "q",
+      "location": "q",
+      "email": "blr@w.com",
+      "mobNo": 1111111111,
+      "password": "password",
+      "id": 5
+    },
+    {
+      "firstName": "qq",
+      "lastName": "q",
+      "location": "aaa",
+      "email": "blr@w.com",
+      "mobNo": 1111111111,
+      "password": "passwo",
+      "id": 6
+    },
+    {
+      "firstName": "aaa",
+      "lastName": "aa",
+      "location": "sasa",
+      "email": "blr@w.com",
+      "mobNo": 1111111111,
+      "password": "passwo",
+      "id": 7
+    },
+    {
+      "firstName": "qwqwq",
+      "lastName": "aaa",
+      "location": "qqq",
+      "email": "aaS@s.com",
+      "mobNo": 1111111111,
+      "password": "passwo",
+      "id": 8
+    },
+    {
+      "firstName": "sss",
+      "lastName": "aaa",
+      "location": "aa",
+      "email": "blr@w.c",
+      "mobNo": 2121212122,
+      "password": "passwo",
+      "id": 9
+    },
+    {
+      "firstName": "aa",
+      "lastName": "aqa",
+      "location": "assa",
+      "email": "aas@wq.com",
+      "mobNo": 1111111111,
+      "password": "passwo",
+      "id": 10
+    },
+    {
+      "firstName": "aaaa",
+      "lastName": "aa",
+      "location": "ssss",
+      "email": "aaSc@s.com",
+      "mobNo": 1111111111,
+      "password": "passwo",
+      "id": 11
     }
   ]
 }

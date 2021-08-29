@@ -1,13 +1,22 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import {Formik,Form} from 'formik';
 import TextField from '../Components/TextField';
 import * as Yup from 'yup';
 
-import { useDispatch } from 'react-redux';
+import { useDispatch,useSelector } from 'react-redux';
+import { registerUser } from '../Redux/Actions/UserActions';
 import { userActions } from '../Redux/Reducer/userReducer';
 
 const Register = (props) => {
     const  dispatch = useDispatch();
+
+    useEffect(() => {
+        return () => {
+            dispatch(userActions.resetErrorStatus());
+        }
+    },[]);
+
+    const regError = useSelector(state => state.user.error);
 
     const validate = Yup.object({
         firstName:Yup.string()
@@ -33,12 +42,13 @@ const Register = (props) => {
 
     const registerHandler = (user) => {
         user.passwordConf = undefined;
-        dispatch(userActions.registerUser(user));
-        props.history.push('/');
+        dispatch(registerUser(user))
+        
     }
     return (
         <>
         <h1>Register Page</h1>
+        <span>{regError}</span>
         <Formik initialValues={{
             firstName:''
             ,lastName:''
