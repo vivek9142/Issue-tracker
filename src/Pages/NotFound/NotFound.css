@@ -1,0 +1,23 @@
+.img-container{
+    max-width: 80%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+.notfoundcontainer{
+    display: none;
+}
+@media screen and (max-width: 992px) {
+    .img-container{
+        max-width: 100%;
+    }
+}
+@media screen and (max-width: 770px) {
+    .img-container{
+        display: none;
+    }
+    .notfoundcontainer{
+        display: block;
+        margin: 15rem auto;
+    }
+}

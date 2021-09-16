@@ -1,0 +1,114 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login page Page Test Suite Login page Snapshot 1`] = `
+Array [
+  <div
+    className="container user-section mt-5 mb-3 "
+  >
+    <h3
+      className="text-center"
+    >
+      Login
+    </h3>
+    <hr />
+  </div>,
+  <div
+    className="container mb-5"
+  >
+    <h5
+      className="fs-6 text-center fw-normal "
+    >
+      
+    </h5>
+  </div>,
+  <div
+    className="container user-section--auth-container"
+  >
+    <form
+      action="#"
+      onReset={[Function]}
+      onSubmit={[Function]}
+    >
+      <div
+        className="row g-3"
+      >
+        <div
+          className="col-12"
+        >
+          <div
+            className=""
+          >
+            <label
+              className="form-label"
+              htmlFor="Email"
+            >
+              Email
+            </label>
+            <input
+              className="form-control"
+              name="email"
+              onBlur={[Function]}
+              onChange={[Function]}
+              placeholder="Enter your Email"
+              type="email"
+              value=""
+            />
+            <div
+              style={
+                Object {
+                  "height": "1rem",
+                }
+              }
+            />
+          </div>
+        </div>
+        <div
+          className="col-12"
+        >
+          <div
+            className=""
+          >
+            <label
+              className="form-label"
+              htmlFor="Password"
+            >
+              Password
+            </label>
+            <input
+              className="form-control"
+              name="password"
+              onBlur={[Function]}
+              onChange={[Function]}
+              placeholder="Enter your Password"
+              type="password"
+              value=""
+            />
+            <div
+              style={
+                Object {
+                  "height": "1rem",
+                }
+              }
+            />
+          </div>
+        </div>
+        <div
+          className="col-12"
+          style={
+            Object {
+              "marginBottom": "5rem",
+            }
+          }
+        >
+          <button
+            className="btn btn-primary"
+            type="submit"
+          >
+            Sign in
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>,
+]
+`;

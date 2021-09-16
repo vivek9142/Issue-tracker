@@ -1,0 +1,73 @@
+.issue-card--link {
+    color: #333;
+    text-decoration: none;
+}
+
+.issue-card--container:hover .issue-card--link{
+    color: #eee;
+}
+
+ .issue-card--container:hover {
+    background-color: #333;
+    transform: scale(1.05);
+    z-index: 12;
+    transition: all .5s;
+}
+
+
+.issue-card--container .issue-card--span{
+    background-color: #333;
+    color: #eee;
+    border-radius: 8px;
+    padding: .3rem;
+    font-size: .9rem;
+    display: block;
+}
+
+.issue-card--container:hover .issue-card--span{
+    background-color: #eee;
+    color: #333;
+}
+
+.issue-card--span-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.list-group-item {
+    color: inherit;
+    background-color: inherit;
+}
+
+.issue-card--button-container{
+    display: flex;
+    justify-content: flex-end;
+}
+
+@media screen and (max-width: 992px) {
+    .card-title{
+        font-size: 1rem;
+    }    
+    .issue-card--container{
+        display: block;
+    }
+    .issue-card--span-container{
+        display: block;
+    }
+    .issue-card--container .issue-card--span{
+        border-radius: 8px;
+        padding: .4rem;
+        font-size: .8rem;
+        display: block;
+    }
+    .issue-card--container div{
+        font-size: .8rem;
+        display: block;
+    }
+}
+
+@media screen and (max-width: 582px) {
+    .issue-card--span-container{
+        display: flex;
+    }
+}

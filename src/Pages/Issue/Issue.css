@@ -1,0 +1,43 @@
+.issue-container{
+    max-width: 50vw;
+    margin: 3rem auto;
+}
+.issue-container .issue-card--span{
+    background-color: #333;
+    color: #eee;
+    border-radius: 8px;
+    padding: .3rem;
+    font-size: .9rem;
+    display: block;
+}
+
+@media screen and (max-width: 992px) {
+    .issue-container{
+        max-width: 60%;
+        margin: 1rem auto;
+    }
+    .issue-container .issue-card--span-container{
+        display: flex;
+        justify-content:space-around ;
+    }
+}
+
+@media screen and (max-width: 816px) {
+    .issue-container{
+        max-width: 80%;
+        margin: 1rem auto;
+    }
+}
+
+@media screen and (max-width: 594px) {
+    .issue-container{
+        max-width: 90%;
+        margin: 1rem auto;
+    }
+    .issue-container--heading {
+        font-size: 1.2rem;
+    }
+    .issue-container .issue-card--span-container{
+        flex-direction: column;
+    }
+}

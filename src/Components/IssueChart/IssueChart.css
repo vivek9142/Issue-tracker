@@ -1,0 +1,22 @@
+.chart-controller{
+    display: flex;
+    justify-content: center;
+}
+.chart-container{
+    width: 65%;
+}
+@media screen and (max-width: 992px) {
+    .chart-container{
+        width: 100%;
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 582px) {
+    .chart-controller{
+        justify-content: flex-start;
+    }
+    .chart-controller h5{
+        font-size: 1rem;
+    }
+}

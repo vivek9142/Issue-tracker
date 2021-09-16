@@ -1,34 +1,34 @@
 import React from 'react';
 import {BrowserRouter , Switch, Route,Redirect,Link } from 'react-router-dom';
 
-import Header from './Components/Header';
-import UpdateIssue from './Pages/UpdateIssue';
-import About from './Pages/About';
-import Issues from './Pages/Issues';
-import Login from './Pages/Login';
-import Register from './Pages/Register';
-import AddIssue from './Pages/AddIssue';
-import NotFound from './Pages/NotFound';
-import Issue from './Pages/Issue';
-import TopViewedIssues from './Pages/TopViewedIssues';
-// import './App.css';
-
 import { useSelector,useDispatch } from 'react-redux';
-import {getIssues} from './Redux/Actions/IssueActions';
+import './App.css';
 
-function App() {
+const Header = React.lazy(()=> import('./Components/Header/Header'));
+const UpdateIssue = React.lazy(()=> import('./Pages/UpdateIssue/UpdateIssue'));
+const About = React.lazy(()=> import('./Pages/About/About'));
+const Issues = React.lazy(()=> import('./Pages/Issues/Issues'));
+const Login = React.lazy(()=> import('./Pages/Login/Login'));
+const Register = React.lazy(()=> import('./Pages/Register/Register'));
+const AddIssue = React.lazy(()=> import('./Pages/AddIssue/AddIssue'));
+const NotFound = React.lazy(()=> import('./Pages/NotFound/NotFound'));
+const Issue = React.lazy(()=> import('./Pages/Issue/Issue'));
+const TopViewedIssues = React.lazy(()=> import('./Pages/TopViewedIssues/TopViewedIssues'));
+
+
+
+const App = () =>  {
   const dispatch = useDispatch();
-  dispatch(getIssues()); 
 
     const isAuth = useSelector(state => state.user.isAuthenticated);
 
   return (
     <BrowserRouter>
     <div className="App">
+      <React.Suspense fallback={<p>Loading</p>}>
         <Header/>
-        <Link to='/Top-Viewed-Issues'>TopViewedIssues</Link>
+
         <Switch>
-        
             <Route path='/' exact component={Issues}/>
 
             { isAuth && [
@@ -48,8 +48,15 @@ function App() {
             <Route path='/Top-Viewed-Issues' component={TopViewedIssues}/>
             <Route component={NotFound}/>
         </Switch>
+        </React.Suspense>
+
         
     </div>
+    <footer className="footer mt-auto py-3 bg-dark">
+      <div className="container">
+      <Link className="footer-brand navbar-brand" to="/">Issue Tracker</Link>
+      </div>
+    </footer>
     </BrowserRouter>
   );
 }

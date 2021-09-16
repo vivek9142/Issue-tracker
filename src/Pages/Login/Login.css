@@ -1,0 +1,23 @@
+.user-section{
+    width: 70%;
+}
+.user-section--auth-container{
+    max-width: 50%;
+}
+@media screen and (max-width: 992px) {
+    .user-section{
+        width: 75%;
+    }
+    .user-section--auth-container{
+        max-width: 60%;
+    }
+}
+
+@media screen and (max-width: 582px) {
+    .user-section{
+        width: 100%;
+    }
+    .user-section--auth-container{
+        max-width: 95%;
+    }
+}

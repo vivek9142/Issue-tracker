@@ -1,0 +1,23 @@
+.about-section{
+    width: 75%;
+}
+@media screen and (max-width: 586px) {
+    .about-section{
+        width: 90%;
+    }
+    .about-section--heading h1{
+        font-size: 1.2rem;
+    }
+    .about-section--features-heading h3{
+        font-size: 1rem;
+    }
+    .about-section--features ul li{
+        font-size: .7rem;
+    }
+    .about-section--description-heading h3{
+        font-size: 1.2rem;
+    }
+    .about-section--description-para p{
+        font-size: .7rem;
+    }
+  }

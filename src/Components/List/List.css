@@ -1,0 +1,49 @@
+.filter--filter-control label{
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+}
+.search-bar{
+    width: 100%;
+}
+
+.Issues-Add-Button {
+    margin: 2rem 0;
+}
+
+.Issues-description {
+    margin-top: -.9rem;
+}
+.delMultiButton{
+    position: fixed;
+    bottom: 5%;
+    right: 3%;
+    z-index: 111;
+    border-radius: 50%;
+    height: 9%;
+}
+@media screen and (max-width: 586px) {
+    .issues-list--heading-container{
+        width: 95%;
+        margin: 0 auto;
+    }
+    
+    .issues-list--container{
+        width: 90%;
+        margin: 0 auto;
+    }
+    .card-header{
+        font-size: 1.1rem;
+    }
+    .card-title{
+        font-size: .9rem;
+    }
+    .card-text{
+        font-size: .8rem;
+    }
+    .btn{
+        font-size: .7rem;
+    }
+    .filter--filter-control {
+        font-size: .8rem;
+    }
+  }

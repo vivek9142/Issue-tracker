@@ -2,120 +2,57 @@
   "issues": [
     {
       "views": 8,
-      "description": "ckzz11111",
-      "severity": "Minor",
+      "description": "On adding to cart,the item does not get added.",
+      "severity": "Major",
       "status": "Closed",
-      "createdDate": "2021-07-26",
-      "resolvedDate": "2021-08-10",
-      "id": 1
-    },
-    {
-      "views": 0,
-      "description": "On clicking Delete, the application crashes.",
-      "severity": "Critical",
-      "status": "Open",
-      "createdDate": "2021-08-04",
-      "resolvedDate": "2021-08-04",
-      "id": 2
-    },
-    {
-      "views": 1,
-      "description": "The heading Add is wrongly displayed as Edit.",
-      "severity": "Minor",
-      "status": "Closed",
-      "createdDate": "2021-08-04",
-      "resolvedDate": "2021-08-04",
+      "createdDate": "2021-08-18",
+      "resolvedDate": "2021-07-28",
       "id": 3
     },
     {
-      "views": 0,
-      "description": "The payment functionality is missing.",
-      "severity": "Major",
-      "status": "In Progress",
-      "createdDate": "2021-08-04",
-      "resolvedDate": "2021-08-04",
+      "views": 5,
+      "description": "The heading Add is wrongly displayed as Edit.",
+      "severity": "Minor",
+      "status": "Closed",
+      "createdDate": "2021-08-18",
+      "resolvedDate": "2021-07-28",
       "id": 4
     },
     {
-      "views": 0,
-      "description": "On adding to cart,the item does not get added.",
-      "severity": "Major",
+      "views": 1,
+      "description": "On clicking Delete, the application crashes.",
+      "severity": "Critical",
       "status": "Open",
-      "createdDate": "2021-08-04",
-      "resolvedDate": "2021-08-04",
-      "id": 5
-    },
-    {
-      "views": 0,
-      "description": "zzzz",
-      "severity": "Major",
-      "status": "Closed",
-      "createdDate": "2021-08-06",
-      "resolvedDate": "2021-08-09",
+      "createdDate": "2021-09-22",
+      "resolvedDate": "2021-10-01",
       "id": 6
     },
     {
       "views": 0,
-      "description": "aaaaaaaaaa",
-      "severity": "Critical",
+      "description": "The heading Add is wrongly displayed as Edit.",
+      "severity": "Minor",
       "status": "Closed",
-      "createdDate": "2021-08-19",
-      "resolvedDate": "2021-08-23",
+      "createdDate": "2021-09-24",
+      "resolvedDate": "2021-09-18",
       "id": 7
     },
     {
-      "views": 0,
-      "description": "aaaaaaaaaa",
-      "severity": "Critical",
-      "status": "Open",
-      "createdDate": "2021-08-19",
-      "resolvedDate": "2021-08-23",
+      "views": 1,
+      "description": "The payment functionality is missing.",
+      "severity": "Major",
+      "status": "In Progress",
+      "createdDate": "2021-08-30",
+      "resolvedDate": "2021-09-03",
       "id": 8
     },
     {
-      "views": 0,
-      "description": "aaaaaaaaaa",
-      "severity": "Critical",
-      "status": "Open",
-      "createdDate": "2021-08-19",
-      "resolvedDate": "2021-08-23",
-      "id": 9
-    },
-    {
-      "views": 0,
-      "description": "blr@w.com",
-      "severity": "Critical",
-      "status": "In Progress",
-      "createdDate": "2021-07-29",
-      "resolvedDate": "2021-08-02",
-      "id": 10
-    },
-    {
-      "views": 0,
-      "description": "vv",
+      "views": 3,
+      "description": "The Add Functionality has some glitches",
       "severity": "Minor",
-      "status": "In Progress",
-      "createdDate": "2021-07-29",
-      "resolvedDate": "2021-08-02",
-      "id": 11
-    },
-    {
-      "views": 0,
-      "description": "zzz",
-      "severity": "Critical",
-      "status": "In Progress",
-      "createdDate": "2021-08-06",
-      "resolvedDate": "2021-07-26",
-      "id": 12
-    },
-    {
-      "views": 0,
-      "description": "z",
-      "severity": "Critical",
-      "status": "In Progress",
-      "createdDate": "2021-08-05",
-      "resolvedDate": "2021-08-23",
-      "id": 13
+      "status": "Open",
+      "createdDate": "2021-09-03",
+      "resolvedDate": "2021-09-30",
+      "id": 9
     }
   ],
   "users": [

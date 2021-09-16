@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header component Page Test Suite Header component Snapshot 1`] = `
+<nav
+  className="navbar navbar-expand-lg navbar-dark bg-dark navbar-sticky"
+>
+  <div
+    className="container"
+  >
+    <a
+      className="navbar-brand"
+      href="/"
+      onClick={[Function]}
+    >
+      Issue Tracker
+    </a>
+    <button
+      aria-controls="navbarNavAltMarkup"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+      className="navbar-toggler"
+      data-bs-target="#navbarNavAltMarkup"
+      data-bs-toggle="collapse"
+      type="button"
+    >
+      <span
+        className="navbar-toggler-icon"
+      />
+    </button>
+    <div
+      className="collapse navbar-collapse nav-items-container"
+      id="navbarNavAltMarkup"
+    >
+      <div
+        className="navbar-nav"
+      >
+        <a
+          className="nav-link"
+          href="/About"
+          onClick={[Function]}
+        >
+          About
+        </a>
+        <a
+          className="nav-link"
+          href="/Top-Viewed-Issues"
+          onClick={[Function]}
+        >
+          Top Viewed Issues
+        </a>
+      </div>
+      <div
+        className="auth d-flex"
+      >
+        <a
+          className="btn btn-primary me-2"
+          href="/Register"
+          onClick={[Function]}
+        >
+          <img
+            alt="register-icon"
+            className="nav--icon"
+            src="register.png"
+          />
+          Register
+        </a>
+        <a
+          className="btn btn-success"
+          href="/Login"
+          onClick={[Function]}
+        >
+          <img
+            alt="login-icon"
+            className="nav--icon"
+            src="login.png"
+          />
+          Login
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+`;
