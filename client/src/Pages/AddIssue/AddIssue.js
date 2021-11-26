@@ -21,7 +21,6 @@ const AddIssue = (props) =>{
         newIssue.status = event.status;
         newIssue.createdDate = event.createdDate;
         newIssue.resolvedDate = event.resolvedDate;
-        newIssue._id=Math.floor(Math.random()*1000);
         dispatch(addIssue(newIssue)).then((res)=>{
             props.history.push('/');  
         });

@@ -31,13 +31,13 @@ const ListItem = (props) => {
                 
                 <div className="card pb-2 issue-card--container">
                      <div className="form-check m-1">
-                        <input type="checkbox" className="form-check-input issue-select" onChange={(ev)=>{SelectMultipleHandler(props.id,ev)}}/>
+                        <input type="checkbox" className="form-check-input issue-select" onChange={(ev)=>{SelectMultipleHandler(props._id,ev)}}/>
                     </div>
-                    <Link className='issue-card--link' to={ auth ? `/Issue/${props.id}` : {javascript:void(0)}} onClick={alertHandler} >
+                    <Link className='issue-card--link' to={ auth ? `/Issue/${props._id}` : {javascript:void(0)}} onClick={alertHandler} >
                         <div>
                             <div className="card-body">
                                 {props.filter.includes('description') && <h5 className="card-title">{props.description}</h5>}
-                                {props.filter.includes('ID') && (<><strong>ID:</strong>{props.id}</>)}
+                                {props.filter.includes('ID') && (<><strong>ID:</strong>{props._id}</>)}
                             </div>
                             <ul className="list-group list-group-flush">
                                 <li className="list-group-item issue-card--span-container">
@@ -49,8 +49,8 @@ const ListItem = (props) => {
                     </Link>
 
                             <div className="card-body issue-card--button-container">
-                                <button className="btn btn-warning btn-sm me-3" onClick={()=> updateHandler(props.id)}>Update</button>
-                                <button className="btn btn-danger btn-sm" onClick={()=> deleteHandler(props.id)}>Delete</button>
+                                <button className="btn btn-warning btn-sm me-3" onClick={()=> updateHandler(props._id)}>Update</button>
+                                <button className="btn btn-danger btn-sm" onClick={()=> deleteHandler(props._id)}>Delete</button>
                             </div>
                     </div>
             </div>

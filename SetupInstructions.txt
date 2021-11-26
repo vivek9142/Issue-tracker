@@ -1,8 +1,0 @@
-Setup Instructions
-1- Backend server JSON-Server start command - 
-a) npm run server
-App will be run by Nodemon package.
-		OR
-b) node app.js
-
-API endpoint - http://localhost:3001/

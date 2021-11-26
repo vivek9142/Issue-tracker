@@ -24,13 +24,13 @@ const issueSlice = createSlice({
             }
         },
         multipleSelectforDelete:(state,action)=>{
-            if(action.payload.isChecked && !state.multiDelId.includes(parseInt(action.payload.id)))
+            if(action.payload.isChecked && !state.multiDelId.includes(action.payload.id))
             {
-                state.multiDelId.push(parseInt(action.payload.id));
+                state.multiDelId.push(action.payload.id);
             }
-            if(!action.payload.isChecked && state.multiDelId.includes(parseInt(action.payload.id)))
+            if(!action.payload.isChecked && state.multiDelId.includes(action.payload.id))
             {
-                const newArr = state.multiDelId.filter(i=> i !== parseInt(action.payload.id));
+                const newArr = state.multiDelId.filter(i=> i !== action.payload.id);
                 state.multiDelId = newArr;
             }
          }
@@ -66,7 +66,7 @@ const issueSlice = createSlice({
         builder.addCase(deleteIssue.pending,(state)=>{
             state.status='loading'
         }).addCase(deleteIssue.fulfilled,(state,action)=>{
-            const newState = state.issues.filter(issue => issue.id !== parseInt(action.payload));
+            const newState = state.issues.filter(issue => issue._id !== action.payload);
             state.issues = newState;
             console.log(action.payload);
             state.status = 'success';
@@ -78,7 +78,7 @@ const issueSlice = createSlice({
             state.status='loading';
         }).addCase(updateViews.fulfilled,(state,action)=>{
             action.payload.issue.id = action.payload.id;
-            state.issues = state.issues.map(issue => issue.id === parseInt(action.payload.id) ? action.payload.issue : issue )
+            state.issues = state.issues.map(issue => issue._id === action.payload.id ? action.payload.issue : issue )
             state.status = 'success';
         }).addCase(updateViews.rejected,(state)=>{
             state.status = 'failed';
@@ -87,7 +87,7 @@ const issueSlice = createSlice({
             state.status='loading';
         }).addCase(deleteMultipleIssues.fulfilled,(state,action)=>{
             for(let el of action.payload) {
-                state.issues=state.issues.filter(issue=> issue.id !==parseInt(el));
+                state.issues=state.issues.filter(issue=> issue._id !==el);
                 }
                 state.multiDelId =[]
         }).addCase(deleteMultipleIssues.rejected,(state)=>{

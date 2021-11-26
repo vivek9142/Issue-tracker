@@ -26,9 +26,8 @@ export const addIssue  = createAsyncThunk(
 
 export const updateIssue  = createAsyncThunk(
     'issue/updateIssue',
-    async ({id,issue}) => {
-        console.log('in thunk',issue);
-        await url.patch(`/issues/${id}`,issue);
+    async ({_id,issue}) => {
+        await url.patch(`/issues/${_id}`,issue);
         return issue;
     }
 );

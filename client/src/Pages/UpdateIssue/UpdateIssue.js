@@ -13,7 +13,7 @@ const UpdateIssue = (props) => {
     
     const dispatch = useDispatch();
     const issues = useSelector(state => state.issue.issues);
-    const issue = issues.find(issue => issue.id === parseInt(props.match.params.id));
+    const issue = issues.find(issue => issue._id === props.match.params.id);
 
     const validate = Yup.object({
         description:Yup.string().required('Issue Description is required'),
@@ -40,8 +40,8 @@ const UpdateIssue = (props) => {
         updateIssue.views = issue.views;
         updatedIssue.createdDate = event.createdDate;
         updatedIssue.resolvedDate = event.resolvedDate;
-        updatedIssue.id = issue.id;
-        dispatch(updateIssue({id:issue.id,issue:updatedIssue})).then(()=>props.history.push('/'));
+        updatedIssue._id = issue._id;
+        dispatch(updateIssue({_id:issue._id,issue:updatedIssue})).then(()=>props.history.push('/'));
     }
     console.log(props.match.params);
     return(
