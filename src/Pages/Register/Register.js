@@ -14,7 +14,7 @@ const Register = (props) => {
         return () => {
             dispatch(userActions.resetErrorStatus());
         }
-    },[]);
+    },[dispatch]);
 
     const regError = useSelector(state => state.user.error);
 

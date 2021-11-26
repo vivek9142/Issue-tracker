@@ -1,7 +1,7 @@
 import React from 'react';
 import {BrowserRouter , Switch, Route,Redirect,Link } from 'react-router-dom';
 
-import { useSelector,useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import './App.css';
 
 const Header = React.lazy(()=> import('./Components/Header/Header'));
@@ -18,8 +18,6 @@ const TopViewedIssues = React.lazy(()=> import('./Pages/TopViewedIssues/TopViewe
 
 
 const App = () =>  {
-  const dispatch = useDispatch();
-
     const isAuth = useSelector(state => state.user.isAuthenticated);
 
   return (
@@ -31,11 +29,8 @@ const App = () =>  {
         <Switch>
             <Route path='/' exact component={Issues}/>
 
-            { isAuth && [
-                <Route path='/AddIssue' key='/AddIssue' exact component={AddIssue}/>
-                ,
-                <Route path='/update/:id' key='/updateIssue' exact component={UpdateIssue}/>
-            ]}
+            <Route path='/AddIssue' key='/AddIssue' exact component={AddIssue}/>
+            <Route path='/update/:id' key='/updateIssue' exact component={UpdateIssue}/>
             
             <Route path='/Issue/:id' exact component={Issue}/>
             <Route path='/About' component={About}/>

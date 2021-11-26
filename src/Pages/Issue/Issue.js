@@ -6,12 +6,12 @@ import { deleteIssue } from '../../Redux/Actions/IssueActions';
 import './Issue.css';
 
 const Issue = (props) => {
-    const Issue = useSelector(state => state.issue.issues.find(i => i._id === props.match.params.id));
+    const Issue = useSelector(state => state.issue.issues.find(i => i.id === parseInt(props.match.params.id)));
     const  dispatch = useDispatch();
     const auth = useSelector(state => state.user.isAuthenticated);
     useEffect(() => {
         return dispatch(updateViews(props.match.params.id))
-    }, []);
+    }, [dispatch,props.match.params.id]);
 
     const deleteHandler = (id) => {
         dispatch(deleteIssue({id}));
@@ -23,7 +23,7 @@ const Issue = (props) => {
             <h3 className='issue-container--heading'>Issue Details</h3>
         <div className="card text-center mt-3">
             <div className="card-header">
-                ID : {Issue._id}
+                ID : {Issue.id}
             </div>
             <div className="card-body">
                 <h5 className="card-title">{Issue.description}</h5>
@@ -38,8 +38,8 @@ const Issue = (props) => {
                 { auth && 
                         <React.Fragment>
                             <div className="card-body issue-card--button-container">
-                                <Link className="btn btn-warning btn-sm me-3" to={`/update/${Issue._id}`}>Update</Link>
-                                <button className="btn btn-danger btn-sm" onClick={()=> deleteHandler(Issue._id)}>Delete</button>
+                                <Link className="btn btn-warning btn-sm me-3" to={`/update/${Issue.id}`}>Update</Link>
+                                <button className="btn btn-danger btn-sm" onClick={()=> deleteHandler(Issue.id)}>Delete</button>
                             </div>
                         </React.Fragment>}
             </div>

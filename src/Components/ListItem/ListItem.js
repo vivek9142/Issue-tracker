@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-
+import { withRouter } from 'react-router';
 import {useSelector } from 'react-redux';
 import './ListItem.css';
 
@@ -10,23 +10,34 @@ const ListItem = (props) => {
     const deleteHandler = (id) => {
         props.onDelete({id:id});
     }
-    const changeHandler = (id,ev)=>{
+    const SelectMultipleHandler = (id,ev)=>{
         props.onSelect(id,ev.target.checked);
     }
-    
+
+    const updateHandler = (id) => {
+        if(auth){
+            props.history.push(`/update/${id}`); 
+        }
+        else alert('You need to Login to perform this Operation!')
+    }
+
+    const alertHandler = () => {
+        if(!auth) alert('You need to Login to perform this Operation!')
+    }
+     
     return(
         <>
             <div className="col-lg-3 col-md-4 col-sm-6 mb-5 ">
                 
                 <div className="card pb-2 issue-card--container">
-                    {auth && <div className="form-check m-1">
-                        <input type="checkbox" className="form-check-input" onChange={(ev)=>{changeHandler(props._id,ev)}}/>
-                    </div>}
-                    <Link className='issue-card--link' to={`/Issue/${props._id}`}>
+                     <div className="form-check m-1">
+                        <input type="checkbox" className="form-check-input issue-select" onChange={(ev)=>{SelectMultipleHandler(props.id,ev)}}/>
+                    </div>
+                    <Link className='issue-card--link' to={ auth ? `/Issue/${props.id}` : {javascript:void(0)}} onClick={alertHandler} >
                         <div>
                             <div className="card-body">
                                 {props.filter.includes('description') && <h5 className="card-title">{props.description}</h5>}
-                                {props.filter.includes('ID') && (<><strong>ID:</strong>{props._id.substr(0,10)+'...'}</>)}
+                                {props.filter.includes('ID') && (<><strong>ID:</strong>{props.id}</>)}
                             </div>
                             <ul className="list-group list-group-flush">
                                 <li className="list-group-item issue-card--span-container">
@@ -37,13 +48,10 @@ const ListItem = (props) => {
                         </div>
                     </Link>
 
-                        { auth && 
-                        <React.Fragment>
                             <div className="card-body issue-card--button-container">
-                                <Link className="btn btn-warning btn-sm me-3" to={`/update/${props._id}`}>Update</Link>
-                                <button className="btn btn-danger btn-sm" onClick={()=> deleteHandler(props._id)}>Delete</button>
+                                <button className="btn btn-warning btn-sm me-3" onClick={()=> updateHandler(props.id)}>Update</button>
+                                <button className="btn btn-danger btn-sm" onClick={()=> deleteHandler(props.id)}>Delete</button>
                             </div>
-                        </React.Fragment>}
                     </div>
             </div>
         
@@ -51,4 +59,4 @@ const ListItem = (props) => {
     )
 }
 
-export default ListItem;
+export default withRouter(ListItem);

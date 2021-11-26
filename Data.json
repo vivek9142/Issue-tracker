@@ -1,7 +1,7 @@
 {
   "issues": [
     {
-      "views": 8,
+      "views": 10,
       "description": "On adding to cart,the item does not get added.",
       "severity": "Major",
       "status": "Closed",
@@ -19,7 +19,7 @@
       "id": 4
     },
     {
-      "views": 1,
+      "views": 2,
       "description": "On clicking Delete, the application crashes.",
       "severity": "Critical",
       "status": "Open",
@@ -53,6 +53,14 @@
       "createdDate": "2021-09-03",
       "resolvedDate": "2021-09-30",
       "id": 9
+    },
+    {
+      "description": "OKAY",
+      "severity": "Major",
+      "status": "Closed",
+      "createdDate": "2021-09-21",
+      "resolvedDate": "2021-09-13",
+      "id": 95
     }
   ],
   "users": [
@@ -63,7 +71,7 @@
       "email": "blr@w.com",
       "mobNo": 3393933939,
       "password": "password",
-      "id": 1
+      "_id": 1
     },
     {
       "firstName": "ddddddddd`",
@@ -154,6 +162,15 @@
       "mobNo": 1111111111,
       "password": "passwo",
       "id": 11
+    },
+    {
+      "firstName": "qw2",
+      "lastName": "qq",
+      "location": "aas",
+      "email": "aaq@q.com",
+      "mobNo": 1111111111,
+      "password": "password",
+      "id": 12
     }
   ]
 }

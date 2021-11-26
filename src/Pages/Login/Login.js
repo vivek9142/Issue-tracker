@@ -16,7 +16,7 @@ const Login = (props) => {
         return () => {
             dispatch(userActions.resetErrorStatus());
         }
-    },[]);
+    },[dispatch]);
     
     const authError = useSelector(state => state.user.error);
     const validate = Yup.object({
@@ -57,7 +57,15 @@ const Login = (props) => {
                     <div className="row g-3">
                             
                             <div className="col-12">
-                                <TextField type='email' name='email' label='Email'/>
+                            <div className="">
+                                <label htmlFor='email' className='form-label'>
+                                    Email</label>
+                                    <input type='email' name='email' className='form-control' placeholder={`Enter your Email`}/>
+                                    <div style={{"height":"1rem"}}>
+                                    <span name='email' style={{"fontSize":"0.8rem","color":"red"}}/>
+                                    </div>
+                            </div>
+                                
                             </div>
                             <div className="col-12">
                                 <TextField type='password' name='password' label='Password'/>

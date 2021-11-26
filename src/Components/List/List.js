@@ -16,17 +16,20 @@ const List = (props) => {
     
     useEffect(() => {
         dispatch(getIssues());
-    }, []);
-    
-        const multiDelArr = useSelector(state => state.issue.multiDelId);
-        const delHandler = (id) => {
-            dispatch(deleteIssue(id)).then(()=>{
-                
-            });
-        }
+    }, [dispatch]);
         const auth = useSelector(state => state.user.isAuthenticated);
         const Issues = useSelector(state => state.issue.issues);
         const filter = useSelector(state => state.issue.filter);
+        const multiDelArr = useSelector(state => state.issue.multiDelId);
+
+        const delHandler = (id) => {
+            if(auth){
+                dispatch(deleteIssue(id)).then(()=>{
+                }); 
+            }
+            else alert('You need to Login to perform this Operation!')
+        }
+        
         const [search,setSearch] = useState('');
 
         const filteredIssues = Issues.filter(issue => issue.description.toLowerCase().includes(search.toLowerCase()));
@@ -35,23 +38,32 @@ const List = (props) => {
             dispatch(issueActions.multipleSelectforDelete({id,isChecked}))
         }
 
-        const deleteAction = ()=> {
-            dispatch(deleteMultipleIssues({multiDelId:multiDelArr}))
+        const deleteAction = async()=> {
+            if(auth){
+                const confirmation = window.confirm(`Are you sure you want to delete ${multiDelArr.length} issues ?`)
+                if(confirmation) dispatch(deleteMultipleIssues({multiDelId:multiDelArr}))
+            }
+            else alert('You need to Login to perform this Operation!')
         }
 
-        let ListContents = filteredIssues.map(issue => (
-            <ListItem key={Math.ceil(Math.random()*1000)*Math.ceil(Math.random()*1000)} {...issue} filter={filter} onSelect={deleteMultiple} onDelete={delHandler}/>
-        ));
         const handleSearch = (event) => {
             setSearch(event.target.value)
         }
         const handleFilterChange = (name,val) => {
             dispatch(issueActions.changeFilter({name,val}));
         }
+
+        const alertHandler = () => {
+            if(!auth) alert('You need to Login to perform this Operation!')
+        }
+        
+        let ListContents = filteredIssues.map(issue => (
+            <ListItem key={issue._id} {...issue} filter={filter} onSelect={deleteMultiple} onDelete={delHandler}/>
+        ));
         
     return(
         <>
-        {multiDelArr.length>0 && <button className='btn btn-primary delMultiButton' onClick={deleteAction}>Delete</button>}
+        {multiDelArr.length>0 && <button className='btn btn-danger delMultiButton' onClick={deleteAction}>Delete</button>}
         <div className="row">
                 <div className="col-md-6">
                     <div className="card bg-light  mb-3">
@@ -106,14 +118,13 @@ const List = (props) => {
                     </p>
                 </div>
 
-                { auth && 
-                        <React.Fragment>
+                
                 <div className="Issues-Add-Button">
-                    <Link to='/AddIssue' className='btn btn-primary'>
+                    <Link to={ auth ? `/AddIssue` : {javascript:void(0)}} className='btn btn-primary' onClick={alertHandler}>
                         Add Issue
                     </Link>
                 </div>
-                </React.Fragment>}
+
             </div>
             
         </div>

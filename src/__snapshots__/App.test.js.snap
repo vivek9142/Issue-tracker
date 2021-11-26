@@ -151,6 +151,17 @@ Array [
                 className="filter--filter-control m-1"
               >
                 <label
+                  htmlFor="ID"
+                >
+                  <input
+                    defaultChecked=""
+                    name="ID"
+                    onChange={[Function]}
+                    type="checkbox"
+                  />
+                  ID
+                </label>
+                <label
                   htmlFor="description"
                 >
                   <input
@@ -239,6 +250,17 @@ Array [
             >
               Find below the Issues, We have covered so Far.
             </p>
+          </div>
+          <div
+            className="Issues-Add-Button"
+          >
+            <a
+              className="btn btn-primary"
+              href="/"
+              onClick={[Function]}
+            >
+              Add Issue
+            </a>
           </div>
         </div>
       </div>

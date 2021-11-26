@@ -2,10 +2,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from 'axios';
 
 const url = axios.create({
-    baseURL:'http://localhost:3001',
-    headers: {
-        "Content-type": "application/json"
-    }
+    baseURL:'http://localhost:3001'
 });
 
 export const getIssues  = createAsyncThunk(
@@ -30,6 +27,7 @@ export const addIssue  = createAsyncThunk(
 export const updateIssue  = createAsyncThunk(
     'issue/updateIssue',
     async ({id,issue}) => {
+        console.log('in thunk',issue);
         await url.patch(`/issues/${id}`,issue);
         return issue;
     }
@@ -38,6 +36,7 @@ export const updateIssue  = createAsyncThunk(
 export const deleteIssue  = createAsyncThunk(
     'issue/deleteIssue',
     async (id) => {
+        console.log(id);
         await url.delete(`/issues/`+id.id);
         return id.id;
     }
@@ -47,7 +46,7 @@ export const updateViews  = createAsyncThunk(
     'issue/updateViews',
     async (id) => {
         const response = await url.get(`/issues/`);
-        const issue = response.data.filter(doc=>doc._id === id)[0];
+        const issue = response.data.filter(doc=>doc.id === id)[0];
         issue.views+=1;
         await url.patch(`/issues/${id}`,issue);
         return issue;

@@ -13,9 +13,7 @@ const UpdateIssue = (props) => {
     
     const dispatch = useDispatch();
     const issues = useSelector(state => state.issue.issues);
-    const issue = issues.find(issue => issue._id === props.match.params.id);
-
-    let formIsHalfFilled;
+    const issue = issues.find(issue => issue.id === parseInt(props.match.params.id));
 
     const validate = Yup.object({
         description:Yup.string().required('Issue Description is required'),
@@ -42,11 +40,10 @@ const UpdateIssue = (props) => {
         updateIssue.views = issue.views;
         updatedIssue.createdDate = event.createdDate;
         updatedIssue.resolvedDate = event.resolvedDate;
-
-        dispatch(updateIssue({id:issue._id,issue:updatedIssue}));
-        props.history.push('/');
+        updatedIssue.id = issue.id;
+        dispatch(updateIssue({id:issue.id,issue:updatedIssue})).then(()=>props.history.push('/'));
     }
-
+    console.log(props.match.params);
     return(
     <React.Fragment>
         
@@ -66,16 +63,13 @@ const UpdateIssue = (props) => {
                 resolvedDate:issue.resolvedDate
             } }
             validationSchema = {validate}
-            onSubmit={async (values)=> { submitHandler(values);}}
+            onSubmit={async (values)=> {submitHandler(values);}}
         >
            {formik=>{
-               let values = Object.values(formik.values);
-               formIsHalfFilled = values.filter(val => {return val && val !== ''});
-               formIsHalfFilled = formIsHalfFilled.length>0 && formIsHalfFilled.length<5;
-
+               
                return(
                     <>
-                    <Prompt when={formIsHalfFilled} message="You have unsaved changes,sure You want to leave?"/>
+                    <Prompt when={formik.dirty} message="You have unsaved changes,sure You want to leave?"/>
                         <div className="container user-section--auth-container">
                             <Form>
                                 <div className="row g-3">
