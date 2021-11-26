@@ -10,8 +10,11 @@ app.use(cors());
 app.use(morgan('dev'));
 app.use(express.json());
 
-app.use('/users/',userRoutes);
-app.use('/issues/',issueRoutes);
+app.use('/api/v1/users/',userRoutes);
+app.use('/api/v1/issues/',issueRoutes);
 
+app.get('*', (req,res) =>{
+    res.sendFile(path.join(__dirname+'/client/build/index.html'));
+});
 
 module.exports = app;

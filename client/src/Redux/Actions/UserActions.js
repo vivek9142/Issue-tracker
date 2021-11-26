@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from 'axios';
 
-const url = axios.create({baseURL:'http://localhost:3001'});
+const url = axios.create({baseURL:'http://localhost:3001/api/v1'});
 
 export const registerUser  = createAsyncThunk(
     'user/registerUser',
