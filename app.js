@@ -15,7 +15,7 @@ app.use('/api/v1/users/',userRoutes);
 app.use('/api/v1/issues/',issueRoutes);
 
 app.get('*', (req,res) =>{
-    res.sendFile(path.join(__dirname+'/client/build/index.html'));
+    res.sendFile(path.join(__dirname,'client/build','index.html'));
 });
 
 module.exports = app;
