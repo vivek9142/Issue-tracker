@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 
 dotenv.config();
 
-const db = process.env.DATABASE.replace('<PASSWORD>',process.env.PASSWORD);
+const db = process.env.DATABASE.replace('PASSWORD',process.env.PASSWORD);
 
 mongoose.connect(db,{
     useNewUrlParser: true,
