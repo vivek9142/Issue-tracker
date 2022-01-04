@@ -2,8 +2,7 @@
 Issue-tracker is an overall Issue management app which is responsible for managing the Issues (bugs or defects).
 We can Create,View, Update and Delete Issues.
 
-#### Deployment Website Link - 
-#### [https://issuetracker6.herokuapp.com/](https://issuetracker6.herokuapp.com/)
+#### Deployment Website Link - [https://issuetracker6.herokuapp.com/](https://issuetracker6.herokuapp.com/)
 
 ## Features
 With this App -
