@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Full MERN Platform for Issue-Tracker Project",
   "main": "app.js",
+  "engines": {
+    "npm": "8.19.4",
+    "node": "16.x"
+  },
   "scripts": {
     "client": "cd client && npm start",
     "server": "nodemon server.js",
